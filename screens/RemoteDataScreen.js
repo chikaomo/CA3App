@@ -37,8 +37,12 @@ export default function RemoteDataScreen({ users }) {
           {u.username && <Row label="Username" value={u.username} />}
           {u.email && <Row label="Email" value={u.email} />}
           {u.phone && <Row label="Phone" value={u.phone} />}
-          {u.address && <Row label="Address" value={`${u.address.street}, ${u.address.city}`} />}
-          {(u.company?.name || u.company_name) && <Row label="Company" value={u.company?.name || u.company_name} />}
+          {u.address && <Row label="Address" value={u.address} />}
+          {(u.company?.name || u.company) && <Row label="Company" value={u.company?.name || u.company} />}
+          {u.website && <Row label="Website" value={u.website} />}
+          {u.zip && <Row label="Zip" value={u.zip} />}
+          {u.state && <Row label="State" value={u.state} />}
+          {u.country && <Row label="Country" value={u.website} />}
           {u.website && <Row label="Website" value={u.website} />}
         </View>
       )}
