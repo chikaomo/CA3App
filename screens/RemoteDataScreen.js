@@ -37,9 +37,18 @@ export default function RemoteDataScreen({ users }) {
           {u.username && <Row label="Username" value={u.username} />}
           {u.email && <Row label="Email" value={u.email} />}
           {u.phone && <Row label="Phone" value={u.phone} />}
-          {u.address && <Row label="Address" value={`${u.address.street}, ${u.address.city}`} />}
-          {(u.company?.name || u.company_name) && <Row label="Company" value={u.company?.name || u.company_name} />}
+          {u.address && <Row label="Address" value={u.address} />}
+          {u.zip && <Row label ="Zip" value={u.zip} />}
+          {u.state && <Row label ="State" value={u.state} />}
+          {u.country && <Row label ="Country" value={u.couuntry} />}
+          {(u.company?.name || u.company) && (<Row label="Company" value={u.company?.name || u.company} />)}
           {u.website && <Row label="Website" value={u.website} />}
+          {u.photo && (
+            <Image
+            source={{ uri: u.photo}}
+            style={{ width: 100, height: 100, borderRadius: 50, marginTop: 10, alignSelf: 'center'}}
+            />
+          )}
         </View>
       )}
     </ScrollView>
